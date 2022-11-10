@@ -14,4 +14,5 @@ const (
 	policyTypeVulnerabilityCoderepo   = "codeRepoVulnerability"
 	policyTypeVulnerabilityHost       = "hostVulnerability"
 	policyTypeVulnerabilityImage      = "containerVulnerability"
+	feedTypeCustomMalware             = "customMalware"
 )
