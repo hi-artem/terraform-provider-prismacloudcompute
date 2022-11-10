@@ -42,31 +42,31 @@ resource "prismacloudcompute_registry_settings" "registry" {
 
 ### Optional
 
-- **specification** (Block List) Registry scanning specifications. (see [below for nested schema](#nestedblock--specification))
+- `specification` (Block List) Registry scanning specifications. (see [below for nested schema](#nestedblock--specification))
 
 ### Read-Only
 
-- **id** (String) The ID of the registry settings.
+- `id` (String) The ID of the registry settings.
 
 <a id="nestedblock--specification"></a>
 ### Nested Schema for `specification`
 
 Optional:
 
-- **cap** (Number) The maximum number of images to scan from each repository, sorted by most recently modified.
-- **collections** (List of String) The set of Defenders available for scanning.
-- **credential** (String) The name of the credential from the credentials store to use for authenticating with the registry.
-- **excluded_repositories** (List of String) Repositories to exclude from scanning.
-- **excluded_tags** (List of String) Tags to exclude from scanning.
-- **harbor_deployment_security** (Boolean) Use temporary tokens provided by Harbor to scan images in projects with the deployment security setting enabled.
-- **jfrog_repo_types** (List of String) JFrog Artifactory repository types to scan.
-- **namespace** (String) IBM Cloud namespace.
-- **os** (String) The base OS of the registry images.
-- **registry** (String) Registry address.
-- **repository** (String) Repositories to scan. Pattern matching is supported.
-- **scanners** (Number) Number of Defenders that can be utilized for each scan job.
-- **tag** (String) Tags to scan. Pattern matching is supported.
-- **type** (String) Registry type.
-- **version_pattern** (String) Pattern used by the scanner to identify the latest tags without querying the registry for additional metadata. If a pattern specifies both date and version, date takes precedence over version.
+- `cap` (Number) The maximum number of images to scan from each repository, sorted by most recently modified.
+- `collections` (List of String) The set of Defenders available for scanning.
+- `credential` (String) The name of the credential from the credentials store to use for authenticating with the registry.
+- `excluded_repositories` (List of String) Repositories to exclude from scanning.
+- `excluded_tags` (List of String) Tags to exclude from scanning.
+- `harbor_deployment_security` (Boolean) Use temporary tokens provided by Harbor to scan images in projects with the deployment security setting enabled.
+- `jfrog_repo_types` (List of String) JFrog Artifactory repository types to scan.
+- `namespace` (String) IBM Cloud namespace.
+- `os` (String) The base OS of the registry images.
+- `registry` (String) Registry address.
+- `repository` (String) Repositories to scan. Pattern matching is supported.
+- `scanners` (Number) Number of Defenders that can be utilized for each scan job.
+- `tag` (String) Tags to scan. Pattern matching is supported.
+- `type` (String) Registry type.
+- `version_pattern` (String) Pattern used by the scanner to identify the latest tags without querying the registry for additional metadata. If a pattern specifies both date and version, date takes precedence over version.
 
 

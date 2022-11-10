@@ -17,18 +17,18 @@ Use this data source to retrieve ID of a custom rule.
 
 ### Required
 
-- **name** (String) Unique custom rule name.
+- `name` (String) Unique custom rule name.
 
 ### Optional
 
-- **description** (String) Free-form text description of the custom rule.
+- `description` (String) Free-form text description of the custom rule.
 
 ### Read-Only
 
-- **id** (String) ID of the custom rule.
-- **message** (String) Message to display for a custom rule event.
-- **prisma_id** (Number) Prisma Cloud Compute ID of the custom rule.
-- **script** (String) Custom rule expression.
-- **type** (String) Custom rule type. Can be set to 'processes', 'filesystem', 'network-outgoing', 'kubernetes-audit', 'waas-request', or 'waas-response'.
+- `id` (String) ID of the custom rule.
+- `message` (String) Message to display for a custom rule event.
+- `prisma_id` (Number) Prisma Cloud Compute ID of the custom rule.
+- `script` (String) Custom rule expression.
+- `type` (String) Custom rule type. Can be set to 'processes', 'filesystem', 'network-outgoing', 'kubernetes-audit', 'waas-request', or 'waas-response'.
 
 

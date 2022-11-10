@@ -17,21 +17,21 @@ description: |-
 
 ### Optional
 
-- **rule** (Block List) Rules that make up the policy. (see [below for nested schema](#nestedblock--rule))
+- `rule` (Block List) Rules that make up the policy. (see [below for nested schema](#nestedblock--rule))
 
 ### Read-Only
 
-- **id** (String) The ID of the policy.
+- `id` (String) The ID of the policy.
 
 <a id="nestedblock--rule"></a>
 ### Nested Schema for `rule`
 
 Optional:
 
-- **description** (String) Free-form text field.
-- **disabled** (Boolean) Whether or not to disable the rule.
-- **effect** (String) The effect to be used. Can be set to 'allow', 'block' or 'alert'.
-- **name** (String) Unique name of the rule.
-- **script** (String) Policy script in Rego syntax.
+- `description` (String) Free-form text field.
+- `disabled` (Boolean) Whether or not to disable the rule.
+- `effect` (String) The effect to be used. Can be set to 'allow', 'block' or 'alert'.
+- `name` (String) Unique name of the rule.
+- `script` (String) Policy script in Rego syntax.
 
 

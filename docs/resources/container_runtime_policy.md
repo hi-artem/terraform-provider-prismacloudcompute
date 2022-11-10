@@ -60,43 +60,43 @@ resource "prismacloudcompute_container_runtime_policy" "ruleset" {
 
 ### Optional
 
-- **learning_disabled** (Boolean) Whether or not to disable automatic behavioral learning.
-- **rule** (Block List) Rules that make up the policy. (see [below for nested schema](#nestedblock--rule))
+- `learning_disabled` (Boolean) Whether or not to disable automatic behavioral learning.
+- `rule` (Block List) Rules that make up the policy. (see [below for nested schema](#nestedblock--rule))
 
 ### Read-Only
 
-- **id** (String) The ID of the policy.
+- `id` (String) The ID of the policy.
 
 <a id="nestedblock--rule"></a>
 ### Nested Schema for `rule`
 
 Required:
 
-- **name** (String) Unique name of the rule.
+- `name` (String) Unique name of the rule.
 
 Optional:
 
-- **advanced_protection** (Boolean) Whether or not to enable advanced protection.
-- **cloud_metadata_enforcement** (Boolean) Whether or not to enable cloud metadata access monitoring.
-- **collections** (List of String) Collections used to scope the rule.
-- **custom_rule** (Block List) List of custom rules. (see [below for nested schema](#nestedblock--rule--custom_rule))
-- **disabled** (Boolean) Whether or not to disable the rule.
-- **dns** (Block List, Max: 1) DNS configuration. (see [below for nested schema](#nestedblock--rule--dns))
-- **filesystem** (Block List, Max: 1) File system configuration. (see [below for nested schema](#nestedblock--rule--filesystem))
-- **kubernetes_enforcement** (Boolean) Whether or not to detect attacks against the cluster.
-- **network** (Block List, Max: 1) Network configuration. (see [below for nested schema](#nestedblock--rule--network))
-- **notes** (String) Free-form text field.
-- **processes** (Block List, Max: 1) Processes configuration. (see [below for nested schema](#nestedblock--rule--processes))
-- **wildfire_analysis** (String) The effect to be used when WildFire analysis is enabled. Can be set to 'block', 'alert', or 'disable'.
+- `advanced_protection` (Boolean) Whether or not to enable advanced protection.
+- `cloud_metadata_enforcement` (Boolean) Whether or not to enable cloud metadata access monitoring.
+- `collections` (List of String) Collections used to scope the rule.
+- `custom_rule` (Block List) List of custom rules. (see [below for nested schema](#nestedblock--rule--custom_rule))
+- `disabled` (Boolean) Whether or not to disable the rule.
+- `dns` (Block List, Max: 1) DNS configuration. (see [below for nested schema](#nestedblock--rule--dns))
+- `filesystem` (Block List, Max: 1) File system configuration. (see [below for nested schema](#nestedblock--rule--filesystem))
+- `kubernetes_enforcement` (Boolean) Whether or not to detect attacks against the cluster.
+- `network` (Block List, Max: 1) Network configuration. (see [below for nested schema](#nestedblock--rule--network))
+- `notes` (String) Free-form text field.
+- `processes` (Block List, Max: 1) Processes configuration. (see [below for nested schema](#nestedblock--rule--processes))
+- `wildfire_analysis` (String) The effect to be used when WildFire analysis is enabled. Can be set to 'block', 'alert', or 'disable'.
 
 <a id="nestedblock--rule--custom_rule"></a>
 ### Nested Schema for `rule.custom_rule`
 
 Optional:
 
-- **action** (String) The action to perform if the custom rule applies. Can be set to 'audit' or 'incident'.
-- **effect** (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'allow'.
-- **id** (Number) Custom rule number.
+- `action` (String) The action to perform if the custom rule applies. Can be set to 'audit' or 'incident'.
+- `effect` (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'allow'.
+- `id` (Number) Custom rule number.
 
 
 <a id="nestedblock--rule--dns"></a>
@@ -104,9 +104,9 @@ Optional:
 
 Optional:
 
-- **allowed** (List of String) Allowed domains. Wildcard prefixes are supported.
-- **denied** (List of String) Denied domains. Wildcard prefixes are supported.
-- **deny_effect** (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'disable'.
+- `allowed` (List of String) Allowed domains. Wildcard prefixes are supported.
+- `denied` (List of String) Denied domains. Wildcard prefixes are supported.
+- `deny_effect` (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'disable'.
 
 
 <a id="nestedblock--rule--filesystem"></a>
@@ -114,13 +114,13 @@ Optional:
 
 Optional:
 
-- **allowed** (List of String) List of allowed file system paths.
-- **backdoor_files** (Boolean) Whether or not to monitor files that can create or persist backdoors (SSH or admin account config files).
-- **check_new_files** (Boolean) Whether or not to detect changes to binaries and certificates.
-- **denied** (List of String) List of denied file system paths.
-- **deny_effect** (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'disable'.
-- **skip_encrypted_binaries** (Boolean) Whether or not to skip encrypted binaries.
-- **suspicious_elf_headers** (Boolean) Whether or not to detect suspicious ELF headers.
+- `allowed` (List of String) List of allowed file system paths.
+- `backdoor_files` (Boolean) Whether or not to monitor files that can create or persist backdoors (SSH or admin account config files).
+- `check_new_files` (Boolean) Whether or not to detect changes to binaries and certificates.
+- `denied` (List of String) List of denied file system paths.
+- `deny_effect` (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'disable'.
+- `skip_encrypted_binaries` (Boolean) Whether or not to skip encrypted binaries.
+- `suspicious_elf_headers` (Boolean) Whether or not to detect suspicious ELF headers.
 
 
 <a id="nestedblock--rule--network"></a>
@@ -128,25 +128,25 @@ Optional:
 
 Optional:
 
-- **allowed_listening_port** (Block List) List of allowed listening ports. (see [below for nested schema](#nestedblock--rule--network--allowed_listening_port))
-- **allowed_outbound_ips** (List of String) List of allowed outbound IP addresses.
-- **allowed_outbound_port** (Block List) List of allowed outbound ports. (see [below for nested schema](#nestedblock--rule--network--allowed_outbound_port))
-- **denied_listening_port** (Block List) List of denied listening ports. (see [below for nested schema](#nestedblock--rule--network--denied_listening_port))
-- **denied_outbound_ips** (List of String) List of denied outbound IP addresses.
-- **denied_outbound_port** (Block List) List of denied outbound ports. (see [below for nested schema](#nestedblock--rule--network--denied_outbound_port))
-- **deny_effect** (String) The effect to be used. Can be set to 'block', 'alert', or 'disable'.
-- **detect_port_scan** (Boolean) Whether or not to detect port scans.
-- **skip_modified_processes** (Boolean) Whether or not to skip network monitoring for modified processes.
-- **skip_raw_sockets** (Boolean) Whether or not to skip raw socket detection.
+- `allowed_listening_port` (Block List) List of allowed listening ports. (see [below for nested schema](#nestedblock--rule--network--allowed_listening_port))
+- `allowed_outbound_ips` (List of String) List of allowed outbound IP addresses.
+- `allowed_outbound_port` (Block List) List of allowed outbound ports. (see [below for nested schema](#nestedblock--rule--network--allowed_outbound_port))
+- `denied_listening_port` (Block List) List of denied listening ports. (see [below for nested schema](#nestedblock--rule--network--denied_listening_port))
+- `denied_outbound_ips` (List of String) List of denied outbound IP addresses.
+- `denied_outbound_port` (Block List) List of denied outbound ports. (see [below for nested schema](#nestedblock--rule--network--denied_outbound_port))
+- `deny_effect` (String) The effect to be used. Can be set to 'block', 'alert', or 'disable'.
+- `detect_port_scan` (Boolean) Whether or not to detect port scans.
+- `skip_modified_processes` (Boolean) Whether or not to skip network monitoring for modified processes.
+- `skip_raw_sockets` (Boolean) Whether or not to skip raw socket detection.
 
 <a id="nestedblock--rule--network--allowed_listening_port"></a>
 ### Nested Schema for `rule.network.allowed_listening_port`
 
 Optional:
 
-- **deny** (Boolean) Whether or not to deny the connection.
-- **end** (Number) End of the port range.
-- **start** (Number) Start of the port range.
+- `deny` (Boolean) Whether or not to deny the connection.
+- `end` (Number) End of the port range.
+- `start` (Number) Start of the port range.
 
 
 <a id="nestedblock--rule--network--allowed_outbound_port"></a>
@@ -154,9 +154,9 @@ Optional:
 
 Optional:
 
-- **deny** (Boolean) Whether or not to deny the connection.
-- **end** (Number) End of the port range.
-- **start** (Number) Start of the port range.
+- `deny` (Boolean) Whether or not to deny the connection.
+- `end` (Number) End of the port range.
+- `start` (Number) Start of the port range.
 
 
 <a id="nestedblock--rule--network--denied_listening_port"></a>
@@ -164,9 +164,9 @@ Optional:
 
 Optional:
 
-- **deny** (Boolean) Whether or not to deny the connection.
-- **end** (Number) End of the port range.
-- **start** (Number) Start of the port range.
+- `deny` (Boolean) Whether or not to deny the connection.
+- `end` (Number) End of the port range.
+- `start` (Number) Start of the port range.
 
 
 <a id="nestedblock--rule--network--denied_outbound_port"></a>
@@ -174,9 +174,9 @@ Optional:
 
 Optional:
 
-- **deny** (Boolean) Whether or not to deny the connection.
-- **end** (Number) End of the port range.
-- **start** (Number) Start of the port range.
+- `deny` (Boolean) Whether or not to deny the connection.
+- `end` (Number) End of the port range.
+- `start` (Number) Start of the port range.
 
 
 
@@ -185,14 +185,14 @@ Optional:
 
 Optional:
 
-- **allowed** (List of String) List of allowed processes.
-- **check_crypto_miners** (Boolean) Whether or not to detect crypto miners.
-- **check_lateral_movement** (Boolean) Whether or not to detect processes that can be used for lateral movement exploits.
-- **check_parent_child** (Boolean) Whether or not to check for parent-child relationship when comparing spawned processes in the model.
-- **check_suid_binaries** (Boolean) Whether or not to check for process-elevating privileges (SUID bit).
-- **denied** (List of String) List of denied processes.
-- **deny_effect** (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'disable'.
-- **skip_modified** (Boolean) Whether or not to skip detection of processes started from modified binaries
-- **skip_reverse_shell** (Boolean) Whether or not skip detection of reverse shells.
+- `allowed` (List of String) List of allowed processes.
+- `check_crypto_miners` (Boolean) Whether or not to detect crypto miners.
+- `check_lateral_movement` (Boolean) Whether or not to detect processes that can be used for lateral movement exploits.
+- `check_parent_child` (Boolean) Whether or not to check for parent-child relationship when comparing spawned processes in the model.
+- `check_suid_binaries` (Boolean) Whether or not to check for process-elevating privileges (SUID bit).
+- `denied` (List of String) List of denied processes.
+- `deny_effect` (String) The effect to be used. Can be set to 'block', 'prevent', 'alert', or 'disable'.
+- `skip_modified` (Boolean) Whether or not to skip detection of processes started from modified binaries
+- `skip_reverse_shell` (Boolean) Whether or not skip detection of reverse shells.
 
 

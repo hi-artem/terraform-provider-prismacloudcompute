@@ -35,20 +35,20 @@ resource "prismacloudcompute_role" "myrole" {
 
 ### Optional
 
-- **description** (String) Role description.
-- **name** (String) Role name.
-- **permission** (Block List) List of permissions. (see [below for nested schema](#nestedblock--permission))
+- `description` (String) Role description.
+- `name` (String) Role name.
+- `permission` (Block List) List of permissions. (see [below for nested schema](#nestedblock--permission))
 
 ### Read-Only
 
-- **id** (String) The ID of the role.
+- `id` (String) The ID of the role.
 
 <a id="nestedblock--permission"></a>
 ### Nested Schema for `permission`
 
 Optional:
 
-- **name** (String) Names roles for the user.
-- **read_write** (Boolean) Indicates the type of permission.
+- `name` (String) Names roles for the user.
+- `read_write` (Boolean) Indicates the type of permission.
 
 

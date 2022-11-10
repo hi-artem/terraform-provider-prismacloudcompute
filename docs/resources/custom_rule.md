@@ -3,7 +3,7 @@
 page_title: "prismacloudcompute_custom_rule Resource - terraform-provider-prismacloudcompute"
 subcategory: ""
 description: |-
-
+  
 ---
 
 # prismacloudcompute_custom_rule (Resource)
@@ -17,22 +17,18 @@ description: |-
 
 ### Required
 
-- **name** (String) Unique custom rule name.
-- **type** (String) Custom rule type. Can be set to 'processes', 'filesystem', 'network-outgoing', 'kubernetes-audit', 'waas-request', or 'waas-response'.
+- `name` (String) Unique custom rule name.
+- `type` (String) Custom rule type. Can be set to 'processes', 'filesystem', 'network-outgoing', 'kubernetes-audit', 'waas-request', or 'waas-response'.
 
 ### Optional
 
-- **description** (String) Free-form text description of the custom rule.
-- **message** (String) Message to display for a custom rule event.
-- **script** (String) Custom rule expression.
+- `description` (String) Free-form text description of the custom rule.
+- `message` (String) Message to display for a custom rule event.
+- `script` (String) Custom rule expression.
 
 ### Read-Only
 
-- **id** (String) ID of the custom rule.
-- **prisma_id** (Number) Prisma Cloud Compute ID of the custom rule.
+- `id` (String) ID of the custom rule.
+- `prisma_id` (Number) Prisma Cloud Compute ID of the custom rule.
 
-## Import
 
-```
-$ terraform import prismacloudcompute_custom_rule.example <rule_name>:<prisma_id>
-```

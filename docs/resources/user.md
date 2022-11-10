@@ -26,25 +26,25 @@ resource "prismacloudcompute_user" "myuser" {
 
 ### Required
 
-- **authentication_type** (String) The user authentication type.
-- **password** (String) Password.
-- **role** (String) Role.
-- **username** (String) Username.
+- `authentication_type` (String) The user authentication type.
+- `password` (String) Password.
+- `role` (String) Role.
+- `username` (String) Username.
 
 ### Optional
 
-- **permissions** (Block List, Max: 1) List of permissions. (see [below for nested schema](#nestedblock--permissions))
+- `permissions` (Block List, Max: 1) List of permissions. (see [below for nested schema](#nestedblock--permissions))
 
 ### Read-Only
 
-- **id** (String) The ID of the user.
+- `id` (String) The ID of the user.
 
 <a id="nestedblock--permissions"></a>
 ### Nested Schema for `permissions`
 
 Optional:
 
-- **collections** (List of String) Specifies the set of Defenders in-scope for working on a scan job.
-- **project** (String) Names of projects which the user can access.
+- `collections` (List of String) Specifies the set of Defenders in-scope for working on a scan job.
+- `project` (String) Names of projects which the user can access.
 
 

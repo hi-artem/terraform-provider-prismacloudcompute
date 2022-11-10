@@ -30,25 +30,25 @@ resource "prismacloudcompute_collection" "mycollection" {
 
 ### Required
 
-- **name** (String) A unique collection name.
+- `name` (String) A unique collection name.
 
 ### Optional
 
-- **account_ids** (List of String) Targeted cloud account IDs.
-- **application_ids** (List of String) Targeted application IDs (for app-embedded). Values must end in a wildcard (*).
-- **clusters** (List of String) Targeted cluster names.
-- **code_repositories** (List of String) Targeted code repositories.
-- **color** (String) A hex color code for the collection to display in the Console.
-- **containers** (List of String) Targeted containers.
-- **description** (String) A free-form text description of the collection.
-- **functions** (List of String) Targeted functions.
-- **hosts** (List of String) Targeted hosts.
-- **images** (List of String) Targeted images.
-- **labels** (List of String) Targeted labels.
-- **namespaces** (List of String) Targeted cluster namespaces.
+- `account_ids` (List of String) Targeted cloud account IDs.
+- `application_ids` (List of String) Targeted application IDs (for app-embedded). Values must end in a wildcard (*).
+- `clusters` (List of String) Targeted cluster names.
+- `code_repositories` (List of String) Targeted code repositories.
+- `color` (String) A hex color code for the collection to display in the Console.
+- `containers` (List of String) Targeted containers.
+- `description` (String) A free-form text description of the collection.
+- `functions` (List of String) Targeted functions.
+- `hosts` (List of String) Targeted hosts.
+- `images` (List of String) Targeted images.
+- `labels` (List of String) Targeted labels.
+- `namespaces` (List of String) Targeted cluster namespaces.
 
 ### Read-Only
 
-- **id** (String) The ID of the collection.
+- `id` (String) The ID of the collection.
 
 

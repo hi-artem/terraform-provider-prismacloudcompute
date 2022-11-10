@@ -66,40 +66,40 @@ resource "prismacloudcompute_host_runtime_policy" "ruleset" {
 
 ### Optional
 
-- **rule** (Block List) Rules that make up the policy. (see [below for nested schema](#nestedblock--rule))
+- `rule` (Block List) Rules that make up the policy. (see [below for nested schema](#nestedblock--rule))
 
 ### Read-Only
 
-- **id** (String) The ID of the policy.
+- `id` (String) The ID of the policy.
 
 <a id="nestedblock--rule"></a>
 ### Nested Schema for `rule`
 
 Optional:
 
-- **activities** (Block List, Max: 1) Activities configuration. (see [below for nested schema](#nestedblock--rule--activities))
-- **antimalware** (Block List, Max: 1) Anti-malware configuration. (see [below for nested schema](#nestedblock--rule--antimalware))
-- **collections** (List of String) Collections used to scope the rule.
-- **custom_rule** (Block List) List of custom rules. (see [below for nested schema](#nestedblock--rule--custom_rule))
-- **disabled** (Boolean) Whether or not to disable the rule.
-- **dns** (Block List, Max: 1) DNS configuration. (see [below for nested schema](#nestedblock--rule--dns))
-- **file_integrity_rule** (Block List) List of file integrity rules. (see [below for nested schema](#nestedblock--rule--file_integrity_rule))
-- **log_inspection_rule** (Block List) List of log inspection rules. (see [below for nested schema](#nestedblock--rule--log_inspection_rule))
-- **name** (String) Unique name of the rule.
-- **network** (Block List, Max: 1) Network configuration. (see [below for nested schema](#nestedblock--rule--network))
-- **notes** (String) Free-form text field.
+- `activities` (Block List, Max: 1) Activities configuration. (see [below for nested schema](#nestedblock--rule--activities))
+- `antimalware` (Block List, Max: 1) Anti-malware configuration. (see [below for nested schema](#nestedblock--rule--antimalware))
+- `collections` (List of String) Collections used to scope the rule.
+- `custom_rule` (Block List) List of custom rules. (see [below for nested schema](#nestedblock--rule--custom_rule))
+- `disabled` (Boolean) Whether or not to disable the rule.
+- `dns` (Block List, Max: 1) DNS configuration. (see [below for nested schema](#nestedblock--rule--dns))
+- `file_integrity_rule` (Block List) List of file integrity rules. (see [below for nested schema](#nestedblock--rule--file_integrity_rule))
+- `log_inspection_rule` (Block List) List of log inspection rules. (see [below for nested schema](#nestedblock--rule--log_inspection_rule))
+- `name` (String) Unique name of the rule.
+- `network` (Block List, Max: 1) Network configuration. (see [below for nested schema](#nestedblock--rule--network))
+- `notes` (String) Free-form text field.
 
 <a id="nestedblock--rule--activities"></a>
 ### Nested Schema for `rule.activities`
 
 Optional:
 
-- **disabled** (Boolean) Whether or not to disable host activity collection.
-- **docker_enabled** (Boolean) Whether or not to collect docker commands.
-- **readonly_docker_enabled** (Boolean) Whether or not to collect read-only docker commands.
-- **service_activities_enabled** (Boolean) Whether or not to collect activity from services.
-- **sshd_enabled** (Boolean) Whether or not to collect new SSH sessions.
-- **sudo_enabled** (Boolean) Whether or not to collect commands ran with sudo or su.
+- `disabled` (Boolean) Whether or not to disable host activity collection.
+- `docker_enabled` (Boolean) Whether or not to collect docker commands.
+- `readonly_docker_enabled` (Boolean) Whether or not to collect read-only docker commands.
+- `service_activities_enabled` (Boolean) Whether or not to collect activity from services.
+- `sshd_enabled` (Boolean) Whether or not to collect new SSH sessions.
+- `sudo_enabled` (Boolean) Whether or not to collect commands ran with sudo or su.
 
 
 <a id="nestedblock--rule--antimalware"></a>
@@ -107,30 +107,30 @@ Optional:
 
 Optional:
 
-- **allowed_processes** (List of String) List of processes and files to allow during anti-malware checks.
-- **crypto_miners** (String) The effect to be used when crypto miners are detected. Can be set to 'prevent', 'alert', or 'disable'.
-- **custom_feed** (String) The effect to be used when malware from custom feeds is detected. Can be set to 'alert' or 'disable'.
-- **denied_processes** (Block List, Max: 1) Denied processes configuration. (see [below for nested schema](#nestedblock--rule--antimalware--denied_processes))
-- **detect_compiler_generated_binary** (Boolean) Whether or not to detect compiler-generated binaries.
-- **encrypted_binaries** (String) The effect to be used when encrypted or packed binaries are detected. Can be set to 'alert' or 'disable'.
-- **execution_flow_hijack** (String) The effect to be used when execution flow hijacking is detected. Can be set to 'alert' or 'disable'.
-- **intelligence_feed** (String) The effect to be used when malware according to Prisma Cloud Compute is detected. Can be set to 'alert' or 'disable'.
-- **reverse_shell** (String) The effect to be used when reverse shell attacks are detected. Can be set to 'alert' or 'disable'.
-- **service_unknown_origin_binary** (String) The effect to be used when non-packaged binaries are created or ran by a service. Can be set to 'prevent', 'alert', or 'disable'.
-- **skip_ssh_tracking** (Boolean) Whether or not to skip tracking of SSH events.
-- **suspicious_elf_headers** (String) The effect to be used when binaries with suspicious ELF headers are detected. Can be set to 'alert' or 'disable'.
-- **temp_filesystem_processes** (String) The effect to be used when processes are ran from a temporary file system. Can be set to 'prevent', 'alert', or 'disable'.
-- **user_unknown_origin_binary** (String) The effect to be used when non-packaged binaries are created or ran by a user. Can be set to 'prevent', 'alert', or 'disable'.
-- **webshell** (String) The effect to be used when webshell attacks are detected. Can be set to 'prevent', 'alert', or 'disable'.
-- **wildfire_analysis** (String) The effect to be used when WildFire analysis is enabled. Can be set to 'alert' or 'disable'.
+- `allowed_processes` (List of String) List of processes and files to allow during anti-malware checks.
+- `crypto_miners` (String) The effect to be used when crypto miners are detected. Can be set to 'prevent', 'alert', or 'disable'.
+- `custom_feed` (String) The effect to be used when malware from custom feeds is detected. Can be set to 'alert' or 'disable'.
+- `denied_processes` (Block List, Max: 1) Denied processes configuration. (see [below for nested schema](#nestedblock--rule--antimalware--denied_processes))
+- `detect_compiler_generated_binary` (Boolean) Whether or not to detect compiler-generated binaries.
+- `encrypted_binaries` (String) The effect to be used when encrypted or packed binaries are detected. Can be set to 'alert' or 'disable'.
+- `execution_flow_hijack` (String) The effect to be used when execution flow hijacking is detected. Can be set to 'alert' or 'disable'.
+- `intelligence_feed` (String) The effect to be used when malware according to Prisma Cloud Compute is detected. Can be set to 'alert' or 'disable'.
+- `reverse_shell` (String) The effect to be used when reverse shell attacks are detected. Can be set to 'alert' or 'disable'.
+- `service_unknown_origin_binary` (String) The effect to be used when non-packaged binaries are created or ran by a service. Can be set to 'prevent', 'alert', or 'disable'.
+- `skip_ssh_tracking` (Boolean) Whether or not to skip tracking of SSH events.
+- `suspicious_elf_headers` (String) The effect to be used when binaries with suspicious ELF headers are detected. Can be set to 'alert' or 'disable'.
+- `temp_filesystem_processes` (String) The effect to be used when processes are ran from a temporary file system. Can be set to 'prevent', 'alert', or 'disable'.
+- `user_unknown_origin_binary` (String) The effect to be used when non-packaged binaries are created or ran by a user. Can be set to 'prevent', 'alert', or 'disable'.
+- `webshell` (String) The effect to be used when webshell attacks are detected. Can be set to 'prevent', 'alert', or 'disable'.
+- `wildfire_analysis` (String) The effect to be used when WildFire analysis is enabled. Can be set to 'alert' or 'disable'.
 
 <a id="nestedblock--rule--antimalware--denied_processes"></a>
 ### Nested Schema for `rule.antimalware.denied_processes`
 
 Optional:
 
-- **effect** (String) The effect to be used. Can be set to 'prevent' or 'alert'.
-- **paths** (List of String) List of processes and files to deny during anti-malware checks.
+- `effect` (String) The effect to be used. Can be set to 'prevent' or 'alert'.
+- `paths` (List of String) List of processes and files to deny during anti-malware checks.
 
 
 
@@ -139,9 +139,9 @@ Optional:
 
 Optional:
 
-- **action** (String) The action to perform if the custom rule applies. Can be set to 'audit' or 'incident'.
-- **effect** (String) The effect to be used. Can be set to 'prevent', 'alert', or 'allow'.
-- **id** (Number) Custom rule number.
+- `action` (String) The action to perform if the custom rule applies. Can be set to 'audit' or 'incident'.
+- `effect` (String) The effect to be used. Can be set to 'prevent', 'alert', or 'allow'.
+- `id` (Number) Custom rule number.
 
 
 <a id="nestedblock--rule--dns"></a>
@@ -149,10 +149,10 @@ Optional:
 
 Optional:
 
-- **allowed** (List of String) Allowed domains. Wildcard prefixes are supported.
-- **denied** (List of String) Denied domains. Wildcard prefixes are supported.
-- **deny_effect** (String) The effect to be used. Can be set to 'prevent', 'alert', or 'disable'.
-- **intelligence_feed** (String) The effect to be used when resolving suspicious domains according to Prisma Cloud Compute. Can be set to 'prevent', 'alert', or 'disable'.
+- `allowed` (List of String) Allowed domains. Wildcard prefixes are supported.
+- `denied` (List of String) Denied domains. Wildcard prefixes are supported.
+- `deny_effect` (String) The effect to be used. Can be set to 'prevent', 'alert', or 'disable'.
+- `intelligence_feed` (String) The effect to be used when resolving suspicious domains according to Prisma Cloud Compute. Can be set to 'prevent', 'alert', or 'disable'.
 
 
 <a id="nestedblock--rule--file_integrity_rule"></a>
@@ -160,13 +160,13 @@ Optional:
 
 Optional:
 
-- **allowed_processes** (List of String) List of processes allowed to generate file system events on monitored files.
-- **excluded_files** (List of String) List of file names to ignore. Pattern matching is supported.
-- **metadata** (Boolean) Whether or not to monitor file metadata changes.
-- **path** (String) Path to monitor.
-- **read** (Boolean) Whether or not to monitor file reads.
-- **recursive** (Boolean) Whether or not to recursively monitor files starting at `path`.
-- **write** (Boolean) Whether or not to monitor file writes.
+- `allowed_processes` (List of String) List of processes allowed to generate file system events on monitored files.
+- `excluded_files` (List of String) List of file names to ignore. Pattern matching is supported.
+- `metadata` (Boolean) Whether or not to monitor file metadata changes.
+- `path` (String) Path to monitor.
+- `read` (Boolean) Whether or not to monitor file reads.
+- `recursive` (Boolean) Whether or not to recursively monitor files starting at `path`.
+- `write` (Boolean) Whether or not to monitor file writes.
 
 
 <a id="nestedblock--rule--log_inspection_rule"></a>
@@ -174,8 +174,8 @@ Optional:
 
 Optional:
 
-- **path** (String) Path to the log file.
-- **regex** (List of String) List of regular expressions to use when inspecting the log file.
+- `path` (String) Path to the log file.
+- `regex` (List of String) List of regular expressions to use when inspecting the log file.
 
 
 <a id="nestedblock--rule--network"></a>
@@ -183,22 +183,22 @@ Optional:
 
 Optional:
 
-- **allowed_outbound_ips** (List of String) List of allowed outbound IP addresses.
-- **custom_feed** (String) The effect to be used when connecting to suspicious IPs according to custom feeds. Can be set to 'alert' or 'disable'.
-- **denied_listening_port** (Block List) List of denied listening ports. (see [below for nested schema](#nestedblock--rule--network--denied_listening_port))
-- **denied_outbound_ips** (List of String) List of denied outbound IP addresses.
-- **denied_outbound_port** (Block List) List of denied outbound ports. (see [below for nested schema](#nestedblock--rule--network--denied_outbound_port))
-- **deny_effect** (String) The effect to be used. Can be set to 'alert' or 'disable'.
-- **intelligence_feed** (String) The effect to be used when connecting to suspicious IPs according to Prisma Cloud Compute. Can be set to 'alert' or 'disable'.
+- `allowed_outbound_ips` (List of String) List of allowed outbound IP addresses.
+- `custom_feed` (String) The effect to be used when connecting to suspicious IPs according to custom feeds. Can be set to 'alert' or 'disable'.
+- `denied_listening_port` (Block List) List of denied listening ports. (see [below for nested schema](#nestedblock--rule--network--denied_listening_port))
+- `denied_outbound_ips` (List of String) List of denied outbound IP addresses.
+- `denied_outbound_port` (Block List) List of denied outbound ports. (see [below for nested schema](#nestedblock--rule--network--denied_outbound_port))
+- `deny_effect` (String) The effect to be used. Can be set to 'alert' or 'disable'.
+- `intelligence_feed` (String) The effect to be used when connecting to suspicious IPs according to Prisma Cloud Compute. Can be set to 'alert' or 'disable'.
 
 <a id="nestedblock--rule--network--denied_listening_port"></a>
 ### Nested Schema for `rule.network.denied_listening_port`
 
 Optional:
 
-- **deny** (Boolean) Whether or not to deny the connection.
-- **end** (Number) End of the port range.
-- **start** (Number) Start of the port range.
+- `deny` (Boolean) Whether or not to deny the connection.
+- `end` (Number) End of the port range.
+- `start` (Number) Start of the port range.
 
 
 <a id="nestedblock--rule--network--denied_outbound_port"></a>
@@ -206,8 +206,8 @@ Optional:
 
 Optional:
 
-- **deny** (Boolean) Whether or not to deny the connection.
-- **end** (Number) End of the port range.
-- **start** (Number) Start of the port range.
+- `deny` (Boolean) Whether or not to deny the connection.
+- `end` (Number) End of the port range.
+- `start` (Number) Start of the port range.
 
 

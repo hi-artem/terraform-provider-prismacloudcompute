@@ -24,26 +24,26 @@ resource "prismacloudcompute_group" "mygroup" {
 
 ### Optional
 
-- **group_id** (String) Group ID.
-- **ldap_group** (Boolean) Whether or not the group is an LDAP group.
-- **name** (String) Group name.
-- **oauth_group** (Boolean) Whether or not the group is an OAuth group.
-- **oidc_group** (Boolean) Whether or not the group is an OpenID Connect group.
-- **permissions** (Block List) List of permissions. (see [below for nested schema](#nestedblock--permissions))
-- **role** (String) Role of the group.
-- **saml_group** (Boolean) Whether or not the group is a SAML group.
-- **users** (List of String) Users in the group.
+- `group_id` (String) Group ID.
+- `ldap_group` (Boolean) Whether or not the group is an LDAP group.
+- `name` (String) Group name.
+- `oauth_group` (Boolean) Whether or not the group is an OAuth group.
+- `oidc_group` (Boolean) Whether or not the group is an OpenID Connect group.
+- `permissions` (Block List) List of permissions. (see [below for nested schema](#nestedblock--permissions))
+- `role` (String) Role of the group.
+- `saml_group` (Boolean) Whether or not the group is a SAML group.
+- `users` (List of String) Users in the group.
 
 ### Read-Only
 
-- **id** (String) The ID of the group.
+- `id` (String) The ID of the group.
 
 <a id="nestedblock--permissions"></a>
 ### Nested Schema for `permissions`
 
 Optional:
 
-- **collections** (List of String) Specifies the set of Defenders in-scope for working on a scan job.
-- **project** (String) Names of projects which the user can access.
+- `collections` (List of String) Specifies the set of Defenders in-scope for working on a scan job.
+- `project` (String) Names of projects which the user can access.
 
 
