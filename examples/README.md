@@ -8,4 +8,4 @@ The document generation tool looks for files in the following locations by defau
 * `data-sources/data_source_name/data-source.tf` example file for the named data source page
 * `resources/resource_name/resource.tf` example file for the named data source page
 
-The files in the `defaults/` directory are for Prisma Cloud Compute default configurations.
+The files in the `defaults/` directory are for Prisma Cloud Compute default configurations. This configuration is a subject to change, depending on the Compute version.

@@ -1,14 +1,22 @@
 terraform {
   required_providers {
     prismacloudcompute = {
-      source = "PaloAltoNetworks/prismacloudcompute"
-      version = "0.0.1"
+      source = "hi-artem/prismacloudcompute"
+      version = "0.8.1"
     }
   }
 }
 
+variable "pcc_console_url" {}
+
+variable "pcc_console_url" {}
+
+variable "pcc_console_url" {}
+
 provider "prismacloudcompute" {
-  config_file = "creds.json"
+  console_url = var.pcc_console_url
+  username    = var.pcc_username
+  password    = var.pcc_password
 }
 
 # These policy resources represent the default values for Prisma Cloud Compute.

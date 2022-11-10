@@ -1,20 +1,20 @@
 terraform {
   required_providers {
     prismacloudcompute = {
-      source  = "PaloAltoNetworks/prismacloudcompute"
-      version = "0.4.0"
+      source  = "hi-artem/prismacloudcompute"
+      version = "0.8.1"
     }
   }
 }
 
 provider "prismacloudcompute" {
-  # Configure provider with file
+  # Configure provider inline
   #
-  config_file = "creds.json"
+  console_url = "https://foo.bar.com"
+  username = "myUsername"
+  password = "myPassword"
 
-  # Alternatively, you can use variables
+  # Or you can use file
   #
-  # console_url = "https://foo.bar.com"
-  # username = "myUsername"
-  # password = "myPassword"
+  # config_file = "creds.json"
 }
