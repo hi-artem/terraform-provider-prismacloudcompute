@@ -1,169 +1,156 @@
 package provider
 
-import (
-	"bytes"
-	"fmt"
-	"testing"
+// func TestAccPolicyComplianceContainerConfig(t *testing.T) {
+// 	fmt.Printf("\n\nStart TestAccPolicyComplianceContainerConfig")
+// 	var o policy.Policy
+// 	id := fmt.Sprintf("tf%s", acctest.RandString(6))
 
-	"github.com/PaloAltoNetworks/terraform-provider-prismacloudcompute/internal/api"
-	"github.com/PaloAltoNetworks/terraform-provider-prismacloudcompute/internal/api/policy"
+// 	resource.Test(t, resource.TestCase{
+// 		PreCheck:     func() { testAccPreCheck(t) },
+// 		Providers:    testAccProviders,
+// 		CheckDestroy: testAccPolicyComplianceContainerDestroy,
+// 		Steps: []resource.TestStep{
+// 			{
+// 				Config: testAccPolicyComplianceContainerConfig(id),
+// 				Check: resource.ComposeTestCheckFunc(
+// 					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
+// 					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
+// 				),
+// 			},
+// 			{
+// 				Config: testAccPolicyComplianceContainerConfig(id),
+// 				Check: resource.ComposeTestCheckFunc(
+// 					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
+// 					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
+// 				),
+// 			},
+// 		},
+// 	})
+// }
 
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/acctest"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/helper/resource"
-	"github.com/hashicorp/terraform-plugin-sdk/v2/terraform"
-)
+// func TestAccPolicyComplianceContainerNetwork(t *testing.T) {
+// 	var o policy.Policy
+// 	id := fmt.Sprintf("tf%s", acctest.RandString(6))
 
-func TestAccPolicyComplianceContainerConfig(t *testing.T) {
-	fmt.Printf("\n\nStart TestAccPolicyComplianceContainerConfig")
-	var o policy.Policy
-	id := fmt.Sprintf("tf%s", acctest.RandString(6))
+// 	resource.Test(t, resource.TestCase{
+// 		PreCheck:     func() { testAccPreCheck(t) },
+// 		Providers:    testAccProviders,
+// 		CheckDestroy: testAccPolicyComplianceContainerDestroy,
+// 		Steps: []resource.TestStep{
+// 			{
+// 				Config: testAccPolicyComplianceContainerConfig(id),
+// 				Check: resource.ComposeTestCheckFunc(
+// 					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
+// 					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
+// 				),
+// 			},
+// 			{
+// 				Config: testAccPolicyComplianceContainerConfig(id),
+// 				Check: resource.ComposeTestCheckFunc(
+// 					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
+// 					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
+// 				),
+// 			},
+// 		},
+// 	})
+// }
 
-	resource.Test(t, resource.TestCase{
-		PreCheck:     func() { testAccPreCheck(t) },
-		Providers:    testAccProviders,
-		CheckDestroy: testAccPolicyComplianceContainerDestroy,
-		Steps: []resource.TestStep{
-			{
-				Config: testAccPolicyComplianceContainerConfig(id),
-				Check: resource.ComposeTestCheckFunc(
-					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
-					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
-				),
-			},
-			{
-				Config: testAccPolicyComplianceContainerConfig(id),
-				Check: resource.ComposeTestCheckFunc(
-					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
-					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
-				),
-			},
-		},
-	})
-}
+// func TestAccPolicyComplianceContainerAuditEvent(t *testing.T) {
+// 	var o policy.Policy
+// 	id := fmt.Sprintf("tf%s", acctest.RandString(6))
 
-func TestAccPolicyComplianceContainerNetwork(t *testing.T) {
-	var o policy.Policy
-	id := fmt.Sprintf("tf%s", acctest.RandString(6))
+// 	resource.Test(t, resource.TestCase{
+// 		PreCheck:     func() { testAccPreCheck(t) },
+// 		Providers:    testAccProviders,
+// 		CheckDestroy: testAccPolicyComplianceContainerDestroy,
+// 		Steps: []resource.TestStep{
+// 			{
+// 				Config: testAccPolicyComplianceContainerConfig(id),
+// 				Check: resource.ComposeTestCheckFunc(
+// 					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
+// 					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
+// 				),
+// 			},
+// 			{
+// 				Config: testAccPolicyComplianceContainerConfig(id),
+// 				Check: resource.ComposeTestCheckFunc(
+// 					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
+// 					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
+// 				),
+// 			},
+// 		},
+// 	})
+// }
 
-	resource.Test(t, resource.TestCase{
-		PreCheck:     func() { testAccPreCheck(t) },
-		Providers:    testAccProviders,
-		CheckDestroy: testAccPolicyComplianceContainerDestroy,
-		Steps: []resource.TestStep{
-			{
-				Config: testAccPolicyComplianceContainerConfig(id),
-				Check: resource.ComposeTestCheckFunc(
-					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
-					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
-				),
-			},
-			{
-				Config: testAccPolicyComplianceContainerConfig(id),
-				Check: resource.ComposeTestCheckFunc(
-					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
-					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
-				),
-			},
-		},
-	})
-}
+// func testAccCheckPolicyComplianceContainerExists(n string, o *policy.Policy) resource.TestCheckFunc {
+// 	return func(s *terraform.State) error {
+// 		// return fmt.Errorf("What is the name: %s", o.PolicyId)
 
-func TestAccPolicyComplianceContainerAuditEvent(t *testing.T) {
-	var o policy.Policy
-	id := fmt.Sprintf("tf%s", acctest.RandString(6))
+// 		rs, ok := s.RootModule().Resources[n]
+// 		if !ok {
+// 			return fmt.Errorf("Resource not found: %s", n)
+// 		}
 
-	resource.Test(t, resource.TestCase{
-		PreCheck:     func() { testAccPreCheck(t) },
-		Providers:    testAccProviders,
-		CheckDestroy: testAccPolicyComplianceContainerDestroy,
-		Steps: []resource.TestStep{
-			{
-				Config: testAccPolicyComplianceContainerConfig(id),
-				Check: resource.ComposeTestCheckFunc(
-					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
-					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
-				),
-			},
-			{
-				Config: testAccPolicyComplianceContainerConfig(id),
-				Check: resource.ComposeTestCheckFunc(
-					testAccCheckPolicyComplianceContainerExists("prismacloudcompute_policies_compliance_container.test", &o),
-					testAccCheckPolicyComplianceContainerAttributes(&o, id, "network"),
-				),
-			},
-		},
-	})
-}
+// 		if rs.Primary.ID == "" {
+// 			return fmt.Errorf("Object label Id is not set")
+// 		}
 
-func testAccCheckPolicyComplianceContainerExists(n string, o *policy.Policy) resource.TestCheckFunc {
-	return func(s *terraform.State) error {
-		// return fmt.Errorf("What is the name: %s", o.PolicyId)
+// 		client := testAccProvider.Meta().(*api.Client)
+// 		lo, err := policy.Get(*client, policy.ComplianceContainerEndpoint)
+// 		if err != nil {
+// 			return fmt.Errorf("Error in get: %s", err)
+// 		}
+// 		*o = lo
 
-		rs, ok := s.RootModule().Resources[n]
-		if !ok {
-			return fmt.Errorf("Resource not found: %s", n)
-		}
+// 		return nil
+// 	}
+// }
 
-		if rs.Primary.ID == "" {
-			return fmt.Errorf("Object label Id is not set")
-		}
+// func testAccCheckPolicyComplianceContainerAttributes(o *policy.Policy, id string, policyType string) resource.TestCheckFunc {
+// 	return func(s *terraform.State) error {
+// 		if o.PolicyId != id {
+// 			return fmt.Errorf("\n\nPolicyId is %s, expected %s", o.PolicyId, id)
+// 		} else {
+// 			fmt.Printf("\n\nName is %s", o.PolicyId)
+// 		}
 
-		client := testAccProvider.Meta().(*api.Client)
-		lo, err := policy.Get(*client, policy.ComplianceContainerEndpoint)
-		if err != nil {
-			return fmt.Errorf("Error in get: %s", err)
-		}
-		*o = lo
+// 		if o.PolicyType != policyType {
+// 			return fmt.Errorf("PolicyType is %s, expected %s", o.PolicyType, policyType)
+// 		}
 
-		return nil
-	}
-}
+// 		return nil
+// 	}
+// }
 
-func testAccCheckPolicyComplianceContainerAttributes(o *policy.Policy, id string, policyType string) resource.TestCheckFunc {
-	return func(s *terraform.State) error {
-		if o.PolicyId != id {
-			return fmt.Errorf("\n\nPolicyId is %s, expected %s", o.PolicyId, id)
-		} else {
-			fmt.Printf("\n\nName is %s", o.PolicyId)
-		}
+// func testAccPolicyComplianceContainerDestroy(s *terraform.State) error {
+// 	/*	client := testAccProvider.Meta().(*api.Client)
 
-		if o.PolicyType != policyType {
-			return fmt.Errorf("PolicyType is %s, expected %s", o.PolicyType, policyType)
-		}
+// 		for _, rs := range s.RootModule().Resources {
 
-		return nil
-	}
-}
+// 			if rs.Type != "prismacloudcompute_policycompliancecontainer" {
+// 				continue
+// 			}
 
-func testAccPolicyComplianceContainerDestroy(s *terraform.State) error {
-	/*	client := testAccProvider.Meta().(*api.Client)
+// 			if rs.Primary.ID != "" {
+// 				name := rs.Primary.ID
+// 				if err := policy.Delete(client, name); err == nil {
+// 					return fmt.Errorf("Object %q still exists", name)
+// 				}
+// 			}
+// 			return nil
+// 		}
+// 	*/
+// 	return nil
+// }
 
-		for _, rs := range s.RootModule().Resources {
+// func testAccPolicyComplianceContainerConfig(id string) string {
+// 	var buf bytes.Buffer
+// 	buf.Grow(500)
 
-			if rs.Type != "prismacloudcompute_policycompliancecontainer" {
-				continue
-			}
+// 	buf.WriteString(fmt.Sprintf(`
+// resource "prismacloudcompute_policyComplianceContainer" "test" {
+//     name = %q
+// }`, id))
 
-			if rs.Primary.ID != "" {
-				name := rs.Primary.ID
-				if err := policy.Delete(client, name); err == nil {
-					return fmt.Errorf("Object %q still exists", name)
-				}
-			}
-			return nil
-		}
-	*/
-	return nil
-}
-
-func testAccPolicyComplianceContainerConfig(id string) string {
-	var buf bytes.Buffer
-	buf.Grow(500)
-
-	buf.WriteString(fmt.Sprintf(`
-resource "prismacloudcompute_policyComplianceContainer" "test" {
-    name = %q
-}`, id))
-
-	return buf.String()
-}
+// 	return buf.String()
+// }
