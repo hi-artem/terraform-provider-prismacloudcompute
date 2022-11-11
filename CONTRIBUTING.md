@@ -56,7 +56,7 @@ If you're interested in developing the provider, see below for a basic setup gui
     ```
 1. Fetch the repository and navigate to its directory.
     ```bash
-    git clone https://github.com/PaloAltoNetworks/terraform-provider-prismacloudcompute.git "$GOPATH"/src/github.com/PaloAltoNetworks/terraform-provider-prismacloudcompute && cd $_
+    git clone https://github.com/hi-artem/terraform-provider-prismacloudcompute.git "$GOPATH"/src/github.com/PaloAltoNetworks/terraform-provider-prismacloudcompute && cd $_
     ```
 2. Make your changes.
 3. Build and install the provider with your changes.
