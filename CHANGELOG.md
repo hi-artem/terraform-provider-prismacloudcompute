@@ -1,4 +1,7 @@
 # Changelog
+## Version 0.8.5 - 2022-10-04
+#### Added
+- Add new resource to manage logging settings
 
 ## Version 0.5.0 - 2022-02-07
 #### Added

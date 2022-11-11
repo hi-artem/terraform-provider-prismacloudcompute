@@ -15,4 +15,5 @@ const (
 	policyTypeVulnerabilityHost       = "hostVulnerability"
 	policyTypeVulnerabilityImage      = "containerVulnerability"
 	feedTypeCustomMalware             = "customMalware"
+	settingsTypeLogging               = "logging"
 )

@@ -76,6 +76,7 @@ func Provider() *schema.Provider {
 			"prismacloudcompute_credential":                       resourceCredentials(),
 			"prismacloudcompute_custom_compliance":                resourceCustomCompliance(),
 			"prismacloudcompute_custom_malware":                   resourceCustomMalwareFeed(),
+			"prismacloudcompute_logging_settings":                 resourceLoggingSettings(),
 		},
 
 		DataSourcesMap: map[string]*schema.Resource{
