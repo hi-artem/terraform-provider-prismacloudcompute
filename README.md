@@ -1,30 +1,33 @@
 # Terraform Provider for Prisma Cloud Compute
-You can find the Prisma Cloud Compute provider in the [Terraform Registry](https://registry.terraform.io/providers/PaloAltoNetworks/prismacloudcompute/latest).
+
+This is a community-driven fork of the official Prisma Cloud Compute provider with some extra sauce.
+
+You can find the Prisma Cloud Compute provider in the [Terraform Registry](https://registry.terraform.io/providers/hi-artem/prismacloudcompute/latest).
 
 ## Basic setup
 ```terraform
 terraform {
   required_providers {
     prismacloudcompute = {
-      source  = "PaloAltoNetworks/prismacloudcompute"
-      version = "0.5.0"
+      source  = "hi-artem/prismacloudcompute"
+      version = "0.8.1"
     }
   }
 }
 
 provider "prismacloudcompute" {
-  # Configure provider with file
+  # Configure provider inline
   #
-  config_file = "creds.json"
+  console_url = "https://foo.bar.com"
+  username = "myUsername"
+  password = "myPassword"
 
-  # Alternatively, you can use variables
+  # Or you can use file
   #
-  # console_url = "https://console.example.com"
-  # username = "myUsername"
-  # password = "myPassword"
+  # config_file = "creds.json"
 }
 ```
-Complete documentation can be found in the [marketplace listing](https://registry.terraform.io/providers/PaloAltoNetworks/prismacloudcompute/latest/docs).
+Complete documentation can be found in the [marketplace listing](https://registry.terraform.io/providers/hi-artem/prismacloudcompute/latest/docs).
 
 ## Contributing
 Contributions are welcome!

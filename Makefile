@@ -20,3 +20,9 @@ install: build
 
 clean:
 	rm -rf ~/.terraform.d/plugins/${HOSTNAME}/${NAMESPACE}/${NAME}
+
+generate:
+	go generate ./...
+
+test:
+	TF_ACC=1 go test -v ./...
