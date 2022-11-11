@@ -40,19 +40,19 @@ Resources representing policies can become really long. It is often helpful to s
 variable "hosts" {
   default = [
     { 
-      name: "ec2-develop, 
+      name: "ec2-development", 
       compliance_check: [
         { id: 16 }
       ]
     },
     { 
-      name: "ec2-staging, 
+      name: "ec2-staging", 
       compliance_check: [
         { id: 16, block: true }
       ]
     },
     { 
-      name: "ec2-staging, 
+      name: "ec2-production", 
       compliance_check: [
         { id: 16, block: true },
         { id: 18, block: false }
